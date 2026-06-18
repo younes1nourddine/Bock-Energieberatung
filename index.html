@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/logo-bock.png">
 </head>
 <body>
   <div id="nav-mount"></div>
@@ -24,6 +25,7 @@
   <section class="hero" aria-labelledby="hero-heading">
     <div class="container">
       <div class="hero__inner">
+        <div class="hero__content">
         <span class="hero__tag">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" width="12" height="12"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           Zertifizierter Energieberater &middot; Neuhausen &amp; Enzkreis
@@ -45,6 +47,10 @@
             <strong>Bis zu 80 % Ihrer Beratungskosten werden durch BAFA-Förderung übernommen.</strong>
             <p>Für Wohn- und Nichtwohngebäude – ich beantrage die Förderung gemeinsam mit Ihnen.</p>
           </div>
+        </div>
+        </div>
+        <div class="hero__image" aria-hidden="true">
+          <img src="images/hero-energie-illustration.jpg" alt="Energieeffizienz-Klassen A bis G – Illustration" loading="eager">
         </div>
       </div>
     </div>
@@ -182,17 +188,20 @@
     <div class="container">
       <span class="eyebrow">Meine Beweggründe</span>
       <h2 id="werte-heading" class="mb-4 text-center">Klimaschutz und Förderung – zwei Seiten derselben Sache</h2>
-      <div class="grid-2">
+      <div class="grid-2 grid-2--stretch">
         <div class="foerder-highlight">
           <div class="foerder-highlight__num" aria-label="80 Prozent">80 %</div>
           <p class="foerder-highlight__label">Ihrer Beratungskosten werden durch BAFA-Förderung übernommen</p>
-          <p>Ein individueller Sanierungsfahrplan kostet Sie nach Förderung oft weniger als 200 €. Die Förderung beantrage ich gemeinsam mit Ihnen – einfach und sicher.</p>
-          <a href="#kontakt" class="btn btn--primary" style="background:rgba(255,255,255,0.2);border:1px solid rgba(192, 156, 156, 0.4);">Förderung prüfen lassen</a>
+          <p>Ein individueller Sanierungsfahrplan kostet Sie nach Förderung oft <strong>weniger als 200 €</strong>. Die Förderung beantrage ich gemeinsam mit Ihnen – einfach und sicher.</p>
+          <a href="#kontakt" class="btn btn--primary" style="background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);">Förderung prüfen lassen</a>
         </div>
-        <div class="foerder-highlight" style="background:linear-gradient(135deg, var(--navy), var(--steel));">
-          <div class="foerder-highlight__num" style="font-size:2.6rem;" aria-label="Klimaschutz">Klimaschutz</div>
+        <div class="foerder-highlight foerder-highlight--klima" style="background:linear-gradient(135deg, #0a3d2e, var(--forest));">
+          <div class="foerder-highlight__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="40" height="40"><path d="M12 2a7 7 0 017 7c0 4-3 7-7 9-4-2-7-5-7-9a7 7 0 017-7z"/><path d="M12 9v4M12 15h.01"/></svg>
+          </div>
+          <div class="foerder-highlight__num" aria-label="Klimaschutz">Klimaschutz</div>
           <p class="foerder-highlight__label">ist für mich keine Pflichtübung, sondern der eigentliche Grund meiner Arbeit</p>
-          <p>Jede Sanierung, die ich begleite, senkt CO₂-Emissionen dauerhaft. Lokale Projekte direkt in meiner Heimatregion Neuhausen und dem Enzkreis liegen mir dabei besonders am Herzen.</p>
+          <p>Jede Sanierung, die ich begleite, senkt CO₂-Emissionen dauerhaft. Lokale Projekte direkt in meiner Heimatregion <strong>Neuhausen und dem Enzkreis</strong> liegen mir dabei besonders am Herzen.</p>
           <a href="pages/ueber-mich.html" class="btn btn--primary" style="background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);">Meine Geschichte lesen</a>
         </div>
       </div>

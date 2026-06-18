@@ -17,8 +17,7 @@ function injectComponents() {
 <nav class="nav" role="navigation" aria-label="Hauptnavigation">
   <div class="nav__inner">
     <a href="${base}index.html" class="nav__logo" aria-label="Zur Startseite – Energieberatung Bock">
-      <span class="nav__logo-name">Energieberatung Bock</span>
-      <span class="nav__logo-sub">Ingenieurbüro Andreas Bock</span>
+      <img src="${base}images/logo-bock.png" alt="Andreas Bock Ingenieurbüro – Energie. Beratung." class="nav__logo-img">
     </a>
     <ul class="nav__links" id="nav-links">
       <li><a href="${base}pages/sanierungsfahrplan.html">Sanierungsfahrplan</a></li>
