@@ -42,16 +42,36 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── KONTAKTFORMULAR ── */
   const form = document.getElementById('kontaktform');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const success = document.getElementById('form-success');
+      const errorBox = document.getElementById('form-error');
+      const originalBtnText = btn.textContent;
       btn.disabled = true;
       btn.textContent = 'Wird gesendet …';
-      setTimeout(() => {
+      if (errorBox) errorBox.style.display = 'none';
+
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (!response.ok) throw new Error('Versand fehlgeschlagen');
+
         form.style.display = 'none';
         if (success) success.style.display = 'block';
-      }, 800);
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = originalBtnText;
+        if (errorBox) {
+          errorBox.textContent = 'Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an.';
+          errorBox.style.display = 'block';
+        }
+      }
     });
   }
 
