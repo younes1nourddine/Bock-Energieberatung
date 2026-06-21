@@ -89,6 +89,8 @@ function injectComponents() {
   "image": "https://energieberatung-bock.de/assets/og-image.jpg",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Finkenstr. 2",
+    "postalCode": "75242",
     "addressLocality": "Neuhausen",
     "addressRegion": "Baden-Württemberg",
     "addressCountry": "DE"
