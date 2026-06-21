@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/sanierungsfahrplan", "destination": "/pages/sanierungsfahrplan.html" },
+    { "source": "/energieausweis", "destination": "/pages/energieausweis.html" },
+    { "source": "/foerdermittelberatung", "destination": "/pages/foerdermittelberatung.html" },
+    { "source": "/energetische-sanierung", "destination": "/pages/energetische-sanierung.html" },
+    { "source": "/ueber-mich", "destination": "/pages/ueber-mich.html" },
+    { "source": "/impressum", "destination": "/pages/impressum.html" },
+    { "source": "/datenschutz", "destination": "/pages/datenschutz.html" }
+  ]
+}
