@@ -16,8 +16,8 @@ function injectComponents() {
   const navHTML = `
 <nav class="nav" role="navigation" aria-label="Hauptnavigation">
   <div class="nav__inner">
-    <a href="${base}index.html" class="nav__logo" aria-label="Zur Startseite – Energieberatung Bock">
-      <img src="${base}images/logo-bock.png" alt="Andreas Bock Ingenieurbüro – Energie. Beratung." class="nav__logo-img">
+    <a href="${base}index.html" class="nav__logo" aria-label="Zur Startseite von Energieberatung Bock">
+      <img src="${base}images/logo-bock.png" alt="Andreas Bock Ingenieurbüro, Energie. Beratung." class="nav__logo-img">
     </a>
     <ul class="nav__links" id="nav-links">
       <li><a href="${base}pages/sanierungsfahrplan.html">Sanierungsfahrplan</a></li>
@@ -38,9 +38,8 @@ function injectComponents() {
   <div class="container">
     <div class="footer__grid">
       <div>
-        <p class="footer__brand-name">Energieberatung Bock</p>
-        <p class="footer__brand-sub">Ingenieurbüro Andreas Bock</p>
-        <p>Zertifizierter Energieberater und Ingenieur in Neuhausen und dem gesamten Enzkreis. Persönlich, unabhängig, gefördert – lokale Projekte liegen mir besonders am Herzen.</p>
+        <img src="${base}images/logo-bock.png" alt="Andreas Bock Ingenieurbüro, Energie. Beratung." class="footer__logo-img">
+        <p>Zertifizierter Energieberater und Ingenieur in Neuhausen und dem gesamten Enzkreis. Persönlich, unabhängig und gefördert: Lokale Projekte liegen mir besonders am Herzen.</p>
       </div>
       <div>
         <h4>Leistungen</h4>
@@ -81,7 +80,7 @@ function injectComponents() {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://energieberatung-bock.de/#business",
-  "name": "Energieberatung Bock – Ingenieurbüro Andreas Bock",
+  "name": "Energieberatung Bock, Ingenieurbüro Andreas Bock",
   "description": "Zertifizierter Energieberater für Sanierungsfahrplan, Energieausweis und BAFA-Förderberatung in Neuhausen und dem gesamten Enzkreis.",
   "url": "https://energieberatung-bock.de",
   "telephone": "+4915561722088",

@@ -96,11 +96,11 @@ p  { color: var(--slate); line-height: 1.75; }
   color: var(--chalk);
 }
 .nav__logo-img {
-  height: 44px;
+  height: 64px;
   width: auto;
   display: block;
-  border-radius: 6px;
-  padding: 3px 6px;
+  border-radius: 8px;
+  padding: 4px 8px;
   background: rgba(255,255,255,0.92);
 }
 .nav__logo-name {
@@ -743,6 +743,7 @@ p  { color: var(--slate); line-height: 1.75; }
 }
 .footer__brand-name { color: var(--chalk); font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
 .footer__brand-sub  { font-size: 0.75rem; opacity: 0.45; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+.footer__logo-img { height: 56px; width: auto; border-radius: 8px; padding: 4px 8px; background: rgba(255,255,255,0.92); margin-bottom: 1rem; display: block; }
 .footer p { font-size: 0.82rem; line-height: 1.7; }
 .footer h4 { color: var(--chalk); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
 .footer__links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
