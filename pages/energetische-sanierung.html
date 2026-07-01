@@ -14,6 +14,134 @@
   <link rel="shortcut icon" href="../favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
   <link rel="apple-touch-icon" href="../favicon.png">
+  <style>
+    /* ── Massnahmen Icon-Grid ── */
+    .massnahmen-section { margin-bottom: 3.5rem; }
+    .massnahmen-section > h2 { margin-bottom: 0.5rem; }
+    .massnahmen-section > p  { color: var(--slate); margin-bottom: 1.75rem; }
+    .massnahmen-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .massnahmen-card {
+      background: var(--mist);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .massnahmen-card__icon {
+      width: 44px;
+      height: 44px;
+      background: var(--chalk);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--moss);
+      flex-shrink: 0;
+    }
+    .massnahmen-card__icon svg { width: 22px; height: 22px; }
+    .massnahmen-card__text {
+      font-size: 0.875rem;
+      color: var(--ink);
+      font-weight: 500;
+      line-height: 1.5;
+      padding-top: 0.15rem;
+    }
+
+    /* ── Unabhaengigkeit Box ── */
+    .unabhaengig-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--forest) 100%);
+      border-radius: var(--radius-lg);
+      padding: 2.75rem 2.5rem;
+      margin-bottom: 3.5rem;
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    .unabhaengig-box__icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.12);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6EE7C0;
+      flex-shrink: 0;
+    }
+    .unabhaengig-box__icon svg { width: 28px; height: 28px; }
+    .unabhaengig-box__body h2 { color: #fff; margin-bottom: 0.75rem; font-size: 1.25rem; }
+    .unabhaengig-box__body p  { color: rgba(255,255,255,0.87); line-height: 1.7; font-size: 0.95rem; }
+
+    /* ── Fachplanung Block ── */
+    .fachplanung-block {
+      background: var(--mist);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .fachplanung-block h2 { margin-bottom: 0.75rem; }
+    .fachplanung-block p  { color: var(--slate); line-height: 1.7; }
+
+    /* ── iSFP-Bonus Box ── */
+    .bonus-box {
+      border: 2px solid var(--moss);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2.5rem;
+      margin-bottom: 3.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: center;
+      background: #F0FAF6;
+    }
+    .bonus-box__number {
+      text-align: center;
+    }
+    .bonus-box__number-value {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--forest);
+      line-height: 1;
+    }
+    .bonus-box__number-unit {
+      font-size: 0.8rem;
+      color: var(--moss);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 0.25rem;
+    }
+    .bonus-box__body h2 { color: var(--ink); margin-bottom: 0.75rem; font-size: 1.15rem; }
+    .bonus-box__body p  { color: var(--slate); line-height: 1.7; font-size: 0.95rem; margin-bottom: 0.6rem; }
+    .bonus-box__body p:last-child { margin-bottom: 0; }
+
+    /* ── Gebaeude Block ── */
+    .gebaeude-block {
+      background: var(--mist);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .gebaeude-block h2 { margin-bottom: 0.75rem; }
+    .gebaeude-block p  { color: var(--slate); line-height: 1.7; }
+
+    .cta-wrap { margin-top: 0.5rem; }
+
+    @media (max-width: 768px) {
+      .massnahmen-grid { grid-template-columns: 1fr 1fr; }
+      .bonus-box { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .massnahmen-grid { grid-template-columns: 1fr; }
+      .unabhaengig-box { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
   <div id="nav-mount"></div>
@@ -24,19 +152,80 @@
       <p>Fachplanung und unabhängige Baubegleitung vom Konzept bis zur Fertigstellung.</p>
     </div>
   </section>
+
   <div class="prose-section">
-    <h2>Was umfasst die energetische Sanierung?</h2>
-    <p>Unter energetischer Sanierung versteht man alle Maßnahmen, die den Energieverbrauch eines Gebäudes dauerhaft reduzieren. Dazu zählen insbesondere die Dämmung von Außenwänden, Dach und Kellerdecke, der Austausch von Fenstern und Türen, die Modernisierung der Heizungsanlage (z. B. auf Wärmepumpe oder Pelletheizung) sowie die Installation von Lüftungsanlagen mit Wärmerückgewinnung.</p>
-    <h2>Meine Rolle als unabhängiger Berater</h2>
-    <p>Als unabhängiger Energieberater und Ingenieur habe ich keine Verbindungen zu Herstellern, Handwerkern oder Materiallieferanten. Das bedeutet, meine Empfehlungen richten sich ausschließlich nach Ihren Interessen und den objektiv besten Lösungen für Ihr Gebäude, nicht nach Provisionen oder Herstellerverträgen.</p>
-    <h2>Fachplanung und Ausschreibung</h2>
-    <p>Ich erstelle die technischen Unterlagen für Ihre Sanierungsmaßnahmen, begleite Sie bei der Auswahl geeigneter Handwerksbetriebe und helfe Ihnen, Angebote korrekt zu vergleichen. Damit vermeiden Sie überhöhte Preise und unklare Leistungsbeschreibungen.</p>
-    <h2>Energetische Baubegleitung (iSFP-Bonus)</h2>
-    <p>Wer seinen Sanierungsfahrplan Schritt für Schritt umsetzt, erhält bei jeder Einzelmaßnahme einen zusätzlichen Förderbonus von 5 %, den sogenannten iSFP-Bonus. Bei einer Maßnahme im Wert von 20.000 Euro sind das 1.000 Euro zusätzliche Förderung. Voraussetzung ist, dass die Maßnahmen durch einen zugelassenen Energieberater begleitet werden. Diese Rolle übernehme ich für Sie.</p>
-    <h2>Für welche Gebäude?</h2>
-    <p>Ich begleite Sanierungen für Einfamilienhäuser, Mehrfamilienhäuser und Wohnungseigentümergemeinschaften sowie kleinere Gewerbeimmobilien. Sprechen Sie mich einfach an, in einem kostenlosen Erstgespräch klären wir, wie ich Ihr Projekt am besten unterstützen kann.</p>
-    <div style="margin-top:2rem;"><a href="../index.html#kontakt" class="btn btn--primary">Kostenloses Erstgespräch anfragen</a></div>
+
+    <!-- Massnahmen Icon-Grid -->
+    <div class="massnahmen-section">
+      <h2>Was umfasst die energetische Sanierung?</h2>
+      <p>Unter energetischer Sanierung versteht man alle Maßnahmen, die den Energieverbrauch eines Gebäudes dauerhaft reduzieren. Dazu zählen insbesondere:</p>
+      <div class="massnahmen-grid">
+        <div class="massnahmen-card">
+          <div class="massnahmen-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="massnahmen-card__text">Dämmung von Außenwänden, Dach und Kellerdecke</div>
+        </div>
+        <div class="massnahmen-card">
+          <div class="massnahmen-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+          </div>
+          <div class="massnahmen-card__text">Austausch von Fenstern und Türen</div>
+        </div>
+        <div class="massnahmen-card">
+          <div class="massnahmen-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="massnahmen-card__text">Modernisierung der Heizungsanlage (z. B. Wärmepumpe oder Pelletheizung)</div>
+        </div>
+        <div class="massnahmen-card" style="grid-column: 2;">
+          <div class="massnahmen-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <div class="massnahmen-card__text">Installation von Lüftungsanlagen mit Wärmerückgewinnung</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unabhaengigkeit -->
+    <div class="unabhaengig-box">
+      <div class="unabhaengig-box__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <div class="unabhaengig-box__body">
+        <h2>Meine Rolle als unabhängiger Berater</h2>
+        <p>Als unabhängiger Energieberater und Ingenieur habe ich keine Verbindungen zu Herstellern, Handwerkern oder Materiallieferanten. Das bedeutet, meine Empfehlungen richten sich ausschließlich nach Ihren Interessen und den objektiv besten Lösungen für Ihr Gebäude, nicht nach Provisionen oder Herstellerverträgen.</p>
+      </div>
+    </div>
+
+    <!-- Fachplanung -->
+    <div class="fachplanung-block">
+      <h2>Fachplanung und Ausschreibung</h2>
+      <p>Ich erstelle die technischen Unterlagen für Ihre Sanierungsmaßnahmen, begleite Sie bei der Auswahl geeigneter Handwerksbetriebe und helfe Ihnen, Angebote korrekt zu vergleichen. Damit vermeiden Sie überhöhte Preise und unklare Leistungsbeschreibungen.</p>
+    </div>
+
+    <!-- iSFP-Bonus -->
+    <div class="bonus-box">
+      <div class="bonus-box__number">
+        <div class="bonus-box__number-value">+5 %</div>
+        <div class="bonus-box__number-unit">iSFP-Bonus</div>
+      </div>
+      <div class="bonus-box__body">
+        <h2>Energetische Baubegleitung (iSFP-Bonus)</h2>
+        <p>Wer seinen Sanierungsfahrplan Schritt für Schritt umsetzt, erhält bei jeder Einzelmaßnahme einen zusätzlichen Förderbonus von 5 %, den sogenannten iSFP-Bonus. Bei einer Maßnahme im Wert von 20.000 Euro sind das 1.000 Euro zusätzliche Förderung.</p>
+        <p>Voraussetzung ist, dass die Maßnahmen durch einen zugelassenen Energieberater begleitet werden. Diese Rolle übernehme ich für Sie.</p>
+      </div>
+    </div>
+
+    <!-- Gebaeude -->
+    <div class="gebaeude-block">
+      <h2>Für welche Gebäude?</h2>
+      <p>Ich begleite Sanierungen für Einfamilienhäuser, Mehrfamilienhäuser und Wohnungseigentümergemeinschaften sowie kleinere Gewerbeimmobilien. Sprechen Sie mich einfach an, in einem kostenlosen Erstgespräch klären wir, wie ich Ihr Projekt am besten unterstützen kann.</p>
+    </div>
+
+    <div class="cta-wrap"><a href="../index.html#kontakt" class="btn btn--primary">Kostenloses Erstgespräch anfragen</a></div>
   </div>
+
   <div id="footer-mount"></div>
   <script src="../js/components.js"></script>
   <script src="../js/main.js"></script>

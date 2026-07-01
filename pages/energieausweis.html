@@ -14,6 +14,131 @@
   <link rel="shortcut icon" href="../favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
   <link rel="apple-touch-icon" href="../favicon.png">
+  <style>
+    /* ── Warn-Box (Pflicht-Info) ── */
+    .pflicht-box {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      background: #FFFBEB;
+      border: 1px solid #F59E0B;
+      border-left: 4px solid #F59E0B;
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3.5rem;
+    }
+    .pflicht-box__icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: #FEF3C7;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #B45309;
+    }
+    .pflicht-box__icon svg { width: 22px; height: 22px; }
+    .pflicht-box__body h2 { margin-bottom: 0.6rem; font-size: 1.15rem; color: var(--ink); }
+    .pflicht-box__body p  { color: var(--slate); line-height: 1.7; font-size: 0.95rem; }
+    .pflicht-box__body p strong { color: #92400E; }
+
+    /* ── Vergleichskarten ── */
+    .ausweis-typen-section { margin-bottom: 3.5rem; }
+    .ausweis-typen-section > h2 { margin-bottom: 1.5rem; }
+    .ausweis-karten {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .ausweis-karte {
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .ausweis-karte--bedarf {
+      background: linear-gradient(135deg, var(--navy) 0%, #153e6b 100%);
+      color: #fff;
+    }
+    .ausweis-karte--verbrauch {
+      background: linear-gradient(135deg, var(--forest) 0%, #155e48 100%);
+      color: #fff;
+    }
+    .ausweis-karte__tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3em 0.75em;
+      border-radius: 999px;
+      margin-bottom: 0.25rem;
+      width: fit-content;
+    }
+    .ausweis-karte--bedarf .ausweis-karte__tag  { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
+    .ausweis-karte--verbrauch .ausweis-karte__tag { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
+    .ausweis-karte__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .ausweis-karte__icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.12);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.9);
+    }
+    .ausweis-karte__icon svg { width: 24px; height: 24px; }
+    .ausweis-karte__text { color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.65; }
+    .ausweis-typen-hint {
+      margin-top: 1.25rem;
+      background: var(--mist);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--slate);
+    }
+
+    /* ── Schnell-Info ── */
+    .schnell-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .schnell-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      background: var(--chalk);
+    }
+    .schnell-card__icon {
+      width: 44px;
+      height: 44px;
+      background: var(--mist);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--moss);
+      margin-bottom: 1rem;
+    }
+    .schnell-card__icon svg { width: 22px; height: 22px; }
+    .schnell-card h3 { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+    .schnell-card p  { font-size: 0.875rem; color: var(--slate); line-height: 1.65; }
+
+    .cta-wrap { margin-top: 0.5rem; }
+
+    @media (max-width: 640px) {
+      .ausweis-karten, .schnell-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   <div id="nav-mount"></div>
@@ -24,19 +149,67 @@
       <p>Bedarfs- und Verbrauchsausweis rechtssicher und schnell, für Kauf, Verkauf oder Vermietung.</p>
     </div>
   </section>
+
   <div class="prose-section">
-    <h2>Wann brauche ich einen Energieausweis?</h2>
-    <p>Das Gebäudeenergiegesetz (GEG) verpflichtet Eigentümer, bei Verkauf, Neuvermietung oder Verpachtung eines Gebäudes einen gültigen Energieausweis vorzulegen, und zwar bereits beim ersten Besichtigungstermin. Wer keinen Energieausweis vorlegen kann, riskiert ein Bußgeld von bis zu 15.000 Euro. Auch in Immobilienanzeigen müssen die Kennwerte des Ausweises angegeben werden, das fehlt erfahrungsgemäß bei vielen privaten Inseraten und wird von Bußgeldstellen zunehmend kontrolliert.</p>
-    <h2>Bedarfsausweis oder Verbrauchsausweis?</h2>
-    <p>Der <strong>Bedarfsausweis</strong> basiert auf einer technischen Analyse des Gebäudes (Dämmung, Fenster, Heizungsanlage) und gibt den theoretischen Energiebedarf an. Er ist aussagekräftiger und bei Wohngebäuden mit weniger als fünf Wohneinheiten, die vor 1977 erbaut wurden, häufig vorgeschrieben.</p>
-    <p>Der <strong>Verbrauchsausweis</strong> basiert auf den tatsächlichen Heizkostenabrechnungen der letzten drei Jahre und ist günstiger in der Erstellung. Er ist für viele neuere oder gut sanierte Gebäude eine geeignete und kostengünstige Lösung.</p>
-    <p>Im Erstgespräch klären wir gemeinsam, welcher Ausweis für Ihr Gebäude der richtige ist.</p>
-    <h2>Wie schnell ist der Energieausweis fertig?</h2>
-    <p>In der Regel stelle ich Ihnen den Energieausweis innerhalb von fünf bis sieben Werktagen nach Übergabe aller notwendigen Unterlagen aus. Bei dringendem Bedarf, etwa bei einem kurzfristig angesetzten Notartermin, sprechen Sie mich einfach an, in solchen Fällen finden wir meist eine schnellere Lösung.</p>
-    <h2>Was benötige ich für die Erstellung?</h2>
-    <p>Für den Verbrauchsausweis benötige ich die Heizkostenabrechnungen der letzten drei Jahre sowie Angaben zu Baujahr und Wohnfläche. Für den Bedarfsausweis nehme ich die relevanten Gebäudedaten im Rahmen eines Ortstermins auf.</p>
-    <div style="margin-top:2rem;"><a href="../index.html#kontakt" class="btn btn--primary">Energieausweis anfragen</a></div>
+
+    <!-- Pflicht-Warn-Box -->
+    <div class="pflicht-box">
+      <div class="pflicht-box__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <div class="pflicht-box__body">
+        <h2>Wann brauche ich einen Energieausweis?</h2>
+        <p>Das Gebäudeenergiegesetz (GEG) verpflichtet Eigentümer, bei Verkauf, Neuvermietung oder Verpachtung eines Gebäudes einen gültigen Energieausweis vorzulegen, und zwar bereits beim ersten Besichtigungstermin. Wer keinen Energieausweis vorlegen kann, riskiert ein <strong>Bußgeld von bis zu 15.000 Euro</strong>. Auch in Immobilienanzeigen müssen die Kennwerte des Ausweises angegeben werden, das fehlt erfahrungsgemäß bei vielen privaten Inseraten und wird von Bußgeldstellen zunehmend kontrolliert.</p>
+      </div>
+    </div>
+
+    <!-- Zwei Typen -->
+    <div class="ausweis-typen-section">
+      <h2>Bedarfsausweis oder Verbrauchsausweis?</h2>
+      <div class="ausweis-karten">
+        <div class="ausweis-karte ausweis-karte--bedarf">
+          <div class="ausweis-karte__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <span class="ausweis-karte__tag">Technische Analyse</span>
+          <div class="ausweis-karte__title">Bedarfsausweis</div>
+          <div class="ausweis-karte__text">Basiert auf einer technischen Analyse des Gebäudes (Dämmung, Fenster, Heizungsanlage) und gibt den theoretischen Energiebedarf an. Er ist aussagekräftiger und bei Wohngebäuden mit weniger als fünf Wohneinheiten, die vor 1977 erbaut wurden, häufig vorgeschrieben.</div>
+        </div>
+        <div class="ausweis-karte ausweis-karte--verbrauch">
+          <div class="ausweis-karte__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <span class="ausweis-karte__tag">Verbrauchsdaten</span>
+          <div class="ausweis-karte__title">Verbrauchsausweis</div>
+          <div class="ausweis-karte__text">Basiert auf den tatsächlichen Heizkostenabrechnungen der letzten drei Jahre und ist günstiger in der Erstellung. Er ist für viele neuere oder gut sanierte Gebäude eine geeignete und kostengünstige Lösung.</div>
+        </div>
+      </div>
+      <div class="ausweis-typen-hint">
+        Im Erstgespräch klären wir gemeinsam, welcher Ausweis für Ihr Gebäude der richtige ist.
+      </div>
+    </div>
+
+    <!-- Schnell und Unterlagen -->
+    <div class="schnell-grid">
+      <div class="schnell-card">
+        <div class="schnell-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Wie schnell ist der Energieausweis fertig?</h3>
+        <p>In der Regel stelle ich Ihnen den Energieausweis innerhalb von fünf bis sieben Werktagen nach Übergabe aller notwendigen Unterlagen aus. Bei dringendem Bedarf, etwa bei einem kurzfristig angesetzten Notartermin, sprechen Sie mich einfach an, in solchen Fällen finden wir meist eine schnellere Lösung.</p>
+      </div>
+      <div class="schnell-card">
+        <div class="schnell-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Was benötige ich für die Erstellung?</h3>
+        <p>Für den Verbrauchsausweis benötige ich die Heizkostenabrechnungen der letzten drei Jahre sowie Angaben zu Baujahr und Wohnfläche. Für den Bedarfsausweis nehme ich die relevanten Gebäudedaten im Rahmen eines Ortstermins auf.</p>
+      </div>
+    </div>
+
+    <div class="cta-wrap"><a href="../index.html#kontakt" class="btn btn--primary">Energieausweis anfragen</a></div>
   </div>
+
   <div id="footer-mount"></div>
   <script src="../js/components.js"></script>
   <script src="../js/main.js"></script>

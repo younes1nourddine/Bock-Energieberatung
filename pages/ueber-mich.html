@@ -14,6 +14,154 @@
   <link rel="shortcut icon" href="../favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
   <link rel="apple-touch-icon" href="../favicon.png">
+  <style>
+    /* ── Slogan Banner (existing, keep + enhance) ── */
+    .slogan-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--forest) 100%);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2.5rem;
+      margin-bottom: 3.5rem;
+      text-align: center;
+      color: #fff;
+    }
+    .slogan-banner__text {
+      font-size: clamp(1.15rem, 3vw, 1.6rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2rem;
+      font-style: italic;
+      letter-spacing: -0.01em;
+    }
+    .slogan-banner__icons {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .slogan-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .slogan-icon svg {
+      width: 28px;
+      height: 28px;
+      color: #6EE7C0;
+    }
+    .slogan-icon span {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ── Hintergrund intro block ── */
+    .hintergrund-block {
+      margin-bottom: 3.5rem;
+    }
+    .hintergrund-block p { color: var(--slate); line-height: 1.75; margin-bottom: 1rem; }
+    .hintergrund-block p:last-of-type { margin-bottom: 1.75rem; }
+
+    /* ── Zertifikate ── */
+    .zertifikate {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .zert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--mist);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.45em 1em;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .zert-badge svg { color: var(--moss); }
+
+    /* ── Motivation Blockquote ── */
+    .motivation-quote {
+      border-left: 4px solid var(--moss);
+      background: var(--mist);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .motivation-quote p {
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .motivation-section { margin-bottom: 3.5rem; }
+    .motivation-section > h2 { margin-bottom: 1.25rem; }
+
+    /* ── Prinzipien-Karten ── */
+    .prinzipien-section { margin-bottom: 3.5rem; }
+    .prinzipien-section > h2 { margin-bottom: 1.5rem; }
+    .prinzipien-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .prinzip-karte {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      background: var(--chalk);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .prinzip-karte__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .prinzip-karte__icon svg { width: 26px; height: 26px; }
+    .prinzip-karte--persoenlich .prinzip-karte__icon { background: #EFF6FF; color: #1D4ED8; }
+    .prinzip-karte--unabhaengig .prinzip-karte__icon { background: #F0FDF4; color: var(--forest); }
+    .prinzip-karte--ganzheitlich .prinzip-karte__icon { background: #FFF7ED; color: #C2410C; }
+    .prinzip-karte__title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .prinzip-karte__text {
+      font-size: 0.875rem;
+      color: var(--slate);
+      line-height: 1.65;
+    }
+
+    /* ── DENA Info ── */
+    .dena-block {
+      background: var(--mist);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .dena-block p { color: var(--slate); line-height: 1.7; }
+
+    .cta-wrap { margin-top: 0.5rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-3 { margin-bottom: 1rem; }
+    .mb-4 { margin-bottom: 1.5rem; }
+
+    @media (max-width: 640px) {
+      .prinzipien-grid { grid-template-columns: 1fr; }
+      .slogan-banner__icons { gap: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
   <div id="nav-mount"></div>
@@ -24,8 +172,10 @@
       <p>Ingenieur und zertifizierter Energieberater in Neuhausen und dem Enzkreis.</p>
     </div>
   </section>
+
   <div class="prose-section">
 
+    <!-- Slogan Banner -->
     <div class="slogan-banner mb-4">
       <p class="slogan-banner__text">„Im Sommer kühl, im Winter warm, und klimafreundlich."</p>
       <div class="slogan-banner__icons">
@@ -44,30 +194,64 @@
       </div>
     </div>
 
-    <div style="margin-bottom:3rem;">
+    <!-- Hintergrund -->
+    <div class="hintergrund-block">
       <span class="eyebrow">Mein Hintergrund</span>
       <h2 class="mb-2">Energieberatung, die wirklich hilft</h2>
       <p class="mb-3">Als Ingenieur habe ich es mir zur Aufgabe gemacht, Hausbesitzern im südlichen Enzkreis einen klaren, ehrlichen Blick auf ihre Immobilie zu geben. Keine Verkaufsinteressen, keine Herstellerbindungen, nur fundierte Beratung, die sich an Ihren Zielen orientiert.</p>
       <p class="mb-3">Mich treibt die Überzeugung an, dass energetische Sanierung nicht kompliziert sein muss. Wenn man versteht, was man warum tut, welche Maßnahmen sich wann lohnen und welche Förderungen verfügbar sind, ist der Weg zu einer effizienten und klimafreundlichen Immobilie überraschend überschaubar.</p>
       <div class="zertifikate">
-        <span class="zert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>DENA-Effizienzexperte</span>
-        <span class="zert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>BAFA-zugelassen</span>
-        <span class="zert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>KfW-Energieberater</span>
+        <span class="zert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>DENA-Effizienzexperte</span>
+        <span class="zert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>BAFA-zugelassen</span>
+        <span class="zert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>KfW-Energieberater</span>
       </div>
     </div>
 
-    <h2>Wie ich zur Energieberatung kam</h2>
-    <p>Als Ingenieur habe ich über viele Jahre erlebt, wie viel ungenutztes Potenzial in unseren Bestandsgebäuden steckt: veraltete Heizsysteme, ungedämmte Fassaden, Energie, die buchstäblich durchs Dach entweicht. Je tiefer ich in diese Themen einstieg, desto klarer wurde mir, dass der Gebäudebestand einer der wichtigsten Hebel für den Klimaschutz ist.</p>
-    <p>Diese Erkenntnis hat etwas in mir verändert. Mir wurde klar, dass ich mit meinem ingenieurtechnischen Hintergrund einen direkten, wirksamen Beitrag zum Klimaschutz leisten kann, nicht abstrakt, sondern ganz konkret, Gebäude für Gebäude, Familie für Familie. Jede Sanierung, die ich begleite, reduziert CO₂-Emissionen, senkt Heizkosten und macht ein Zuhause zukunftsfähig.</p>
-    <p>Diese Motivation ist es, die mich bis heute antreibt: Ich will nicht einfach Beratungsstunden verkaufen, sondern Menschen dabei helfen, einen echten Unterschied zu machen, für ihren Geldbeutel und für das Klima. Genau deshalb habe ich mich vollständig der Energieberatung gewidmet und mich zum DENA-Energieeffizienz-Experten zertifizieren lassen.</p>
+    <!-- Motivation -->
+    <div class="motivation-section">
+      <h2>Wie ich zur Energieberatung kam</h2>
+      <div class="motivation-quote">
+        <p>Als Ingenieur habe ich über viele Jahre erlebt, wie viel ungenutztes Potenzial in unseren Bestandsgebäuden steckt: veraltete Heizsysteme, ungedämmte Fassaden, Energie, die buchstäblich durchs Dach entweicht. Je tiefer ich in diese Themen einstieg, desto klarer wurde mir, dass der Gebäudebestand einer der wichtigsten Hebel für den Klimaschutz ist.</p>
+      </div>
+      <div class="motivation-quote">
+        <p>Diese Erkenntnis hat etwas in mir verändert. Mir wurde klar, dass ich mit meinem ingenieurtechnischen Hintergrund einen direkten, wirksamen Beitrag zum Klimaschutz leisten kann, nicht abstrakt, sondern ganz konkret, Gebäude für Gebäude, Familie für Familie. Jede Sanierung, die ich begleite, reduziert CO₂-Emissionen, senkt Heizkosten und macht ein Zuhause zukunftsfähig.</p>
+      </div>
+      <div class="motivation-quote">
+        <p>Diese Motivation ist es, die mich bis heute antreibt: Ich will nicht einfach Beratungsstunden verkaufen, sondern Menschen dabei helfen, einen echten Unterschied zu machen, für ihren Geldbeutel und für das Klima. Genau deshalb habe ich mich vollständig der Energieberatung gewidmet und mich zum DENA-Energieeffizienz-Experten zertifizieren lassen.</p>
+      </div>
+    </div>
 
+    <!-- Beratungsphilosophie als 3 Prinzipien -->
+    <div class="prinzipien-section">
+      <h2>Meine Beratungsphilosophie</h2>
+      <div class="prinzipien-grid">
+        <div class="prinzip-karte prinzip-karte--persoenlich">
+          <div class="prinzip-karte__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="prinzip-karte__title">Persönlich</div>
+          <div class="prinzip-karte__text">Ich komme zu Ihnen nach Hause, nehme mir Zeit, höre zu und schaue genau hin. Erst dann empfehle ich konkrete Maßnahmen. Kein Standardprogramm aus dem Regal.</div>
+        </div>
+        <div class="prinzip-karte prinzip-karte--unabhaengig">
+          <div class="prinzip-karte__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div class="prinzip-karte__title">Unabhängig</div>
+          <div class="prinzip-karte__text">Nur solche Maßnahmen, die für Ihr Gebäude, Ihr Budget und Ihre Lebenssituation wirklich sinnvoll sind. Keine Verbindungen zu Herstellern oder Handwerkern.</div>
+        </div>
+        <div class="prinzip-karte prinzip-karte--ganzheitlich">
+          <div class="prinzip-karte__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div class="prinzip-karte__title">Ganzheitlich</div>
+          <div class="prinzip-karte__text">Als DENA-gelisteter Energieeffizienz-Experte bin ich offiziell zur Antragstellung bei BAFA und KfW berechtigt, Voraussetzung für die maximale Förderung.</div>
+        </div>
+      </div>
+    </div>
 
-    <h2>Meine Beratungsphilosophie</h2>
-    <p>Ich komme zu Ihnen nach Hause, nehme mir Zeit, höre zu und schaue genau hin. Erst dann empfehle ich konkrete Maßnahmen, und nur solche, die für Ihr Gebäude, Ihr Budget und Ihre Lebenssituation wirklich sinnvoll sind. Kein Standardprogramm, kein Rundum-sorglos-Paket aus dem Regal.</p>
-    <p>Als DENA-gelisteter Energieeffizienz-Experte bin ich offiziell zur Antragstellung bei BAFA und KfW berechtigt. Das ist Voraussetzung dafür, dass Sie überhaupt die maximale Förderung erhalten können, denn ohne diesen Nachweis lassen sich viele Förderprogramme gar nicht erst beantragen.</p>
-
-    <div style="margin-top:2.5rem;"><a href="../index.html#kontakt" class="btn btn--primary">Jetzt kostenloses Erstgespräch vereinbaren</a></div>
+    <div class="cta-wrap"><a href="../index.html#kontakt" class="btn btn--primary">Jetzt kostenloses Erstgespräch vereinbaren</a></div>
   </div>
+
   <div id="footer-mount"></div>
   <script src="../js/components.js"></script>
   <script src="../js/main.js"></script>
