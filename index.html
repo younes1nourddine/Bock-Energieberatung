@@ -18,6 +18,163 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico">
+  <style>
+    /* ── Schnellcheck ─────────────────────────────────────────────── */
+    .schnellcheck {
+      background: var(--mist);
+    }
+    .sc-widget {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+      box-shadow: 0 4px 24px rgba(11,37,69,.07);
+    }
+    /* Progress bar */
+    .sc-progress {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 2rem;
+    }
+    .sc-progress__segment {
+      flex: 1;
+      height: 5px;
+      border-radius: 99px;
+      background: var(--border);
+      transition: background .3s;
+    }
+    .sc-progress__segment.active {
+      background: var(--moss);
+    }
+    /* Step header */
+    .sc-step-label {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: .35rem;
+    }
+    .sc-question {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 1.25rem;
+      line-height: 1.35;
+    }
+    /* Option cards */
+    .sc-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: .65rem;
+    }
+    .sc-option {
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: .85rem 1rem;
+      cursor: pointer;
+      background: #fff;
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-align: left;
+      transition: border-color .18s, background .18s, color .18s;
+      line-height: 1.3;
+    }
+    .sc-option:hover {
+      border-color: var(--moss);
+      background: #f0faf6;
+    }
+    .sc-option.selected {
+      border-color: var(--forest);
+      background: var(--forest);
+      color: #fff;
+    }
+    /* Result panel */
+    .sc-result {
+      display: none;
+    }
+    .sc-result.visible {
+      display: block;
+    }
+    .sc-result__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: #e8f7f1;
+      color: var(--forest);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .3rem .75rem;
+      border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .sc-result__title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 .75rem;
+      line-height: 1.25;
+    }
+    .sc-result__text {
+      color: var(--slate);
+      font-size: .93rem;
+      line-height: 1.65;
+      margin: 0 0 1.25rem;
+    }
+    .sc-result__stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-bottom: 1.5rem;
+    }
+    .sc-stat-box {
+      background: var(--mist);
+      border-radius: 10px;
+      padding: .85rem 1rem;
+    }
+    .sc-stat-box__label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: .2rem;
+    }
+    .sc-stat-box__value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.25;
+    }
+    .sc-result__cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      align-items: center;
+    }
+    .sc-restart {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: .85rem;
+      color: var(--slate);
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+    }
+    .sc-restart:hover { color: var(--ink); }
+    @media (max-width: 480px) {
+      .sc-widget { padding: 1.25rem; }
+      .sc-result__stats { grid-template-columns: 1fr; }
+      .sc-options { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
 </head>
@@ -33,7 +190,7 @@
           Zertifizierter Energieberater &middot; Neuhausen &amp; Enzkreis
         </span>
         <h1 id="hero-heading">Im Sommer kühl, im Winter warm: <em>und klimafreundlich.</em></h1>
-        <p class="hero__sub">Ich wohne selbst in Neuhausen und kenne die Altbauten, Heizungsanlagen und Förderfragen der Region aus eigener Erfahrung. Als Energieberater bin ich hauptsächlich im südlichen Enzkreis tätig, in Neuhausen, Tiefenbronn, Birkenfeld, Engelsbrand, Heimsheim, Wimsheim, Friolzheim und den umliegenden Gemeinden.</p>
+        <p class="hero__sub">Ich wohne selbst in Neuhausen und kenne die Altbauten, Heizungsanlagen und Förderfragen der Region aus eigener Erfahrung. Als Energieberater bin ich hauptsächlich im südlichen Enzkreis tätig: Neuhausen, Tiefenbronn, Heimsheim, Mönsheim, Wimsheim, Engelsbrand und den umliegenden Gemeinden.</p>
         <div class="hero__actions">
           <a href="#kontakt" class="btn btn--primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" width="16" height="16"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
@@ -137,6 +294,94 @@
     </div>
   </section>
 
+  <section class="section schnellcheck" id="schnellcheck" aria-labelledby="schnellcheck-heading">
+    <div class="container">
+      <span class="eyebrow">Schnellcheck</span>
+      <h2 id="schnellcheck-heading" class="mb-2">Wie sanierungsbedürftig ist Ihr Gebäude?</h2>
+      <p class="mb-4" style="max-width:560px;">Beantworten Sie vier kurze Fragen, um eine erste Einschätzung Ihres Einsparpotenzials zu erhalten, ohne Anmeldung und ohne Dateneingabe.</p>
+
+      <div class="sc-widget" role="region" aria-label="Schnellcheck Gebäudezustand">
+        <!-- Progress bar -->
+        <div class="sc-progress" aria-hidden="true">
+          <div class="sc-progress__segment" id="sc-seg-0"></div>
+          <div class="sc-progress__segment" id="sc-seg-1"></div>
+          <div class="sc-progress__segment" id="sc-seg-2"></div>
+          <div class="sc-progress__segment" id="sc-seg-3"></div>
+        </div>
+
+        <!-- Steps -->
+        <div id="sc-steps">
+          <!-- Step 1 -->
+          <div class="sc-step" id="sc-step-0">
+            <p class="sc-step-label">Frage 1 von 4</p>
+            <p class="sc-question">Was ist Ihr Gebäudetyp?</p>
+            <div class="sc-options" role="group" aria-label="Gebäudetyp auswählen">
+              <button class="sc-option" data-step="0" data-value="efh">Einfamilienhaus</button>
+              <button class="sc-option" data-step="0" data-value="mfh">Mehrfamilienhaus</button>
+              <button class="sc-option" data-step="0" data-value="whg">Wohnung</button>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="sc-step" id="sc-step-1" hidden>
+            <p class="sc-step-label">Frage 2 von 4</p>
+            <p class="sc-question">Wann wurde Ihr Gebäude gebaut?</p>
+            <div class="sc-options" role="group" aria-label="Baujahr auswählen">
+              <button class="sc-option" data-step="1" data-value="vor1980">Vor 1980</button>
+              <button class="sc-option" data-step="1" data-value="1980-2000">1980 – 2000</button>
+              <button class="sc-option" data-step="1" data-value="nach2000">Nach 2000</button>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="sc-step" id="sc-step-2" hidden>
+            <p class="sc-step-label">Frage 3 von 4</p>
+            <p class="sc-question">Wie heizen Sie aktuell?</p>
+            <div class="sc-options" role="group" aria-label="Heizungsart auswählen">
+              <button class="sc-option" data-step="2" data-value="oel">Öl</button>
+              <button class="sc-option" data-step="2" data-value="gas">Gas</button>
+              <button class="sc-option" data-step="2" data-value="wp">Wärmepumpe</button>
+              <button class="sc-option" data-step="2" data-value="fern">Fernwärme</button>
+              <button class="sc-option" data-step="2" data-value="sonst">Sonstiges</button>
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div class="sc-step" id="sc-step-3" hidden>
+            <p class="sc-step-label">Frage 4 von 4</p>
+            <p class="sc-question">Wann wurde zuletzt größer saniert?</p>
+            <div class="sc-options" role="group" aria-label="Letzte Sanierung auswählen">
+              <button class="sc-option" data-step="3" data-value="nie">Nie</button>
+              <button class="sc-option" data-step="3" data-value="alt">Vor über 15 Jahren</button>
+              <button class="sc-option" data-step="3" data-value="neu">In den letzten 15 Jahren</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div class="sc-result" id="sc-result" aria-live="polite">
+          <div class="sc-result__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <span id="sc-badge-text">Ihre Einschätzung</span>
+          </div>
+          <p class="sc-result__title" id="sc-result-title"></p>
+          <p class="sc-result__text" id="sc-result-text"></p>
+          <div class="sc-result__stats">
+            <div class="sc-stat-box">
+              <p class="sc-stat-box__label">Geschätztes Einsparpotenzial</p>
+              <p class="sc-stat-box__value" id="sc-saving"></p>
+            </div>
+            <div class="sc-stat-box">
+              <p class="sc-stat-box__label">Empfohlene Maßnahme</p>
+              <p class="sc-stat-box__value" id="sc-measure"></p>
+            </div>
+          </div>
+          <div class="sc-result__cta">
+            <a href="#kontakt" class="btn btn--primary">Jetzt kostenlos anfragen</a>
+            <button class="sc-restart" id="sc-restart">Neu starten</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" aria-labelledby="ueber-heading">
     <div class="container">
       <div class="ueber-grid">
@@ -234,5 +479,134 @@
   <div id="footer-mount"></div>
   <script src="js/components.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var answers = [null, null, null, null];
+      var current = 0;
+
+      function update() {
+        // progress segments
+        for (var i = 0; i < 4; i++) {
+          var seg = document.getElementById('sc-seg-' + i);
+          if (i <= current) seg.classList.add('active');
+          else seg.classList.remove('active');
+        }
+        // show/hide steps
+        for (var j = 0; j < 4; j++) {
+          var el = document.getElementById('sc-step-' + j);
+          if (j === current) {
+            el.removeAttribute('hidden');
+            // restore selected state
+            el.querySelectorAll('.sc-option').forEach(function (btn) {
+              btn.classList.toggle('selected', btn.dataset.value === answers[j]);
+            });
+          } else {
+            el.setAttribute('hidden', '');
+          }
+        }
+        document.getElementById('sc-result').classList.remove('visible');
+      }
+
+      function showResult() {
+        // mark all segments active
+        for (var i = 0; i < 4; i++) {
+          document.getElementById('sc-seg-' + i).classList.add('active');
+        }
+        for (var j = 0; j < 4; j++) {
+          document.getElementById('sc-step-' + j).setAttribute('hidden', '');
+        }
+
+        var typ   = answers[0]; // efh | mfh | whg
+        var bj    = answers[1]; // vor1980 | 1980-2000 | nach2000
+        var heiz  = answers[2]; // oel | gas | wp | fern | sonst
+        var san   = answers[3]; // nie | alt | neu
+
+        var score = 0;
+        if (bj === 'vor1980')    score += 3;
+        if (bj === '1980-2000')  score += 2;
+        if (bj === 'nach2000')   score += 0;
+        if (heiz === 'oel')      score += 3;
+        if (heiz === 'gas')      score += 2;
+        if (heiz === 'sonst')    score += 1;
+        if (san === 'nie')       score += 3;
+        if (san === 'alt')       score += 2;
+        if (san === 'neu')       score += 1;
+
+        var badge, title, text, saving, measure;
+
+        if (score >= 7) {
+          badge   = 'Hohes Einsparpotenzial erkannt';
+          title   = 'Ihr Gebäude hat erheblichen Sanierungsbedarf';
+          text    = 'Aufgrund des Baujahrs, der Heizungsanlage und des Sanierungsstands ist das Energieeinsparpotenzial Ihres Gebäudes besonders hoch. Mit einem individuellen Sanierungsfahrplan legen Sie die Grundlage für eine schrittweise, förderfähige Modernisierung, die Heizkosten dauerhaft senkt und den Wohnkomfort deutlich verbessert.';
+          saving  = 'bis zu 50 % Heizkosten';
+          measure = 'Sanierungsfahrplan (iSFP)';
+        } else if (score >= 4) {
+          badge   = 'Merkliches Einsparpotenzial vorhanden';
+          title   = 'Gezielte Maßnahmen können viel bewirken';
+          text    = 'Ihr Gebäude bietet noch spürbares Potenzial für Energieeinsparungen. Je nach Zustand von Dämmung, Fenstern und Heizungsanlage lassen sich mit gezielten Einzelmaßnahmen oder einem abgestimmten Sanierungspaket deutliche Einsparungen erzielen, bei attraktiver BAFA- oder KfW-Förderung.';
+          saving  = 'bis zu 30 % Heizkosten';
+          measure = 'Heizungscheck & Beratung';
+        } else {
+          badge   = 'Optimierungspotenzial vorhanden';
+          title   = 'Ihr Gebäude ist gut aufgestellt';
+          text    = 'Ihr Gebäude befindet sich bereits in einem vergleichsweise guten energetischen Zustand. Dennoch lohnt sich ein professioneller Blick: Oft verbergen sich in Detailbereichen wie Lüftung, Warmwasser oder Regelungstechnik noch Einsparmöglichkeiten, die sich schnell amortisieren.';
+          saving  = 'bis zu 15 % Energiekosten';
+          measure = 'Energieberatung vor Ort';
+        }
+
+        // Heizungsbonus-Hinweis bei Öl/Gas
+        if ((heiz === 'oel' || heiz === 'gas') && score < 7) {
+          text += ' Ein Heizungstausch von Öl oder Gas auf eine moderne Wärmepumpe wird aktuell mit bis zu 70 % gefördert und bietet ein besonders gutes Preis-Leistungs-Verhältnis.';
+        }
+
+        document.getElementById('sc-badge-text').textContent  = badge;
+        document.getElementById('sc-result-title').textContent = title;
+        document.getElementById('sc-result-text').textContent  = text;
+        document.getElementById('sc-saving').textContent       = saving;
+        document.getElementById('sc-measure').textContent      = measure;
+
+        var result = document.getElementById('sc-result');
+        result.classList.add('visible');
+        result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      function reset() {
+        answers = [null, null, null, null];
+        current = 0;
+        update();
+      }
+
+      // Wire up option buttons
+      document.querySelectorAll('.sc-option').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var step = parseInt(btn.dataset.step, 10);
+          var val  = btn.dataset.value;
+          answers[step] = val;
+
+          // Mark selected visually
+          document.querySelectorAll('.sc-option[data-step="' + step + '"]').forEach(function (b) {
+            b.classList.remove('selected');
+          });
+          btn.classList.add('selected');
+
+          // Short delay then advance
+          setTimeout(function () {
+            if (step < 3) {
+              current = step + 1;
+              update();
+            } else {
+              showResult();
+            }
+          }, 220);
+        });
+      });
+
+      // Restart button
+      document.getElementById('sc-restart').addEventListener('click', reset);
+
+      // Init
+      update();
+    })();
+  </script>
 </body>
 </html>
