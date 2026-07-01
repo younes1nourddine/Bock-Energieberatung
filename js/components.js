@@ -23,8 +23,8 @@ function injectComponents() {
       <li><a href="${base}pages/sanierungsfahrplan.html">Sanierungsfahrplan</a></li>
       <li><a href="${base}pages/foerdermittelberatung.html">Förderberatung</a></li>
       <li><a href="${base}pages/baubegleitung.html">Baubegleitung</a></li>
-      <li><a href="${base}pages/ueber-mich.html">Über mich</a></li>
       <li><a href="${base}pages/energieausweis.html">Energieausweis</a></li>
+      <li><a href="${base}pages/ueber-mich.html">Über mich</a></li>
       <li><a href="${base}index.html#kontakt" class="nav__cta">Beratung anfragen</a></li>
     </ul>
     <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false">
