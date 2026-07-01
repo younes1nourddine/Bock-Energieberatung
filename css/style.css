@@ -209,7 +209,7 @@ p  { color: var(--slate); line-height: 1.75; }
   gap: 6px;
   background: rgba(29,158,117,0.2);
   border: 1px solid rgba(29,158,117,0.35);
-  color: #6EE7C0;
+  color: var(--moss);
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -229,7 +229,7 @@ p  { color: var(--slate); line-height: 1.75; }
 }
 .hero h1 em {
   font-style: normal;
-  color: #6EE7C0;
+  color: var(--moss);
 }
 .hero__sub {
   color: rgba(255,255,255,0.72);
@@ -274,41 +274,17 @@ p  { color: var(--slate); line-height: 1.75; }
 .btn--full { width: 100%; justify-content: center; }
 .btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-/* ── FÖRDER-BANNER ── */
-.foerder-banner {
-  background: rgba(14,92,69,0.25);
-  border: 1px solid rgba(110,231,192,0.3);
-  border-radius: var(--radius-md);
-  padding: 1rem 1.25rem;
+/* ── HERO NOTE ── */
+.hero__note {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  margin-top: 2.5rem;
-  max-width: 620px;
-}
-.foerder-banner__icon {
-  width: 36px;
-  height: 36px;
-  background: rgba(29,158,117,0.3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.foerder-banner__icon svg { width: 18px; height: 18px; color: #6EE7C0; }
-.foerder-banner__text strong {
-  display: block;
-  color: #6EE7C0;
-  font-size: 0.88rem;
-  font-weight: 700;
-  margin-bottom: 2px;
-}
-.foerder-banner__text p {
-  color: rgba(255,255,255,0.65);
-  font-size: 0.8rem;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.82rem;
   line-height: 1.5;
 }
+.hero__note svg { color: var(--moss); }
 
 /* ── STATS BAR ── */
 .stats-bar {
@@ -327,7 +303,7 @@ p  { color: var(--slate); line-height: 1.75; }
   display: block;
   font-size: 1.8rem;
   font-weight: 800;
-  color: #6EE7C0;
+  color: var(--moss);
   line-height: 1;
   margin-bottom: 4px;
   letter-spacing: -0.02em;
@@ -482,7 +458,7 @@ p  { color: var(--slate); line-height: 1.75; }
 .fallbeispiel__header h3 { color: var(--chalk); font-size: 0.95rem; }
 .fallbeispiel__tag {
   background: rgba(29,158,117,0.25);
-  color: #6EE7C0;
+  color: var(--moss);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.06em;
