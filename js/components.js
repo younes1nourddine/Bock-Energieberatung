@@ -21,9 +21,10 @@ function injectComponents() {
     </a>
     <ul class="nav__links" id="nav-links">
       <li><a href="${base}pages/sanierungsfahrplan.html">Sanierungsfahrplan</a></li>
-      <li><a href="${base}pages/energieausweis.html">Energieausweis</a></li>
       <li><a href="${base}pages/foerdermittelberatung.html">Förderberatung</a></li>
+      <li><a href="${base}pages/baubegleitung.html">Baubegleitung</a></li>
       <li><a href="${base}pages/ueber-mich.html">Über mich</a></li>
+      <li><a href="${base}pages/energieausweis.html">Energieausweis</a></li>
       <li><a href="${base}index.html#kontakt" class="nav__cta">Beratung anfragen</a></li>
     </ul>
     <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false">
@@ -39,16 +40,17 @@ function injectComponents() {
     <div class="footer__grid">
       <div>
         <img src="${base}images/logo-bock.png" alt="Andreas Bock Ingenieurbüro, Energie. Beratung." class="footer__logo-img">
-        <p>Zertifizierter Energieberater und Ingenieur in Neuhausen und dem gesamten Enzkreis. Persönlich, unabhängig und gefördert: Lokale Projekte liegen mir besonders am Herzen.</p>
+        <p>Zertifizierter Energieberater und Ingenieur im südlichen Enzkreis. Persönlich, unabhängig und kompetent: Neuhausen, Tiefenbronn, Birkenfeld, Engelsbrand und Umgebung.</p>
       </div>
       <div>
         <h4>Leistungen</h4>
         <ul class="footer__links">
           <li><a href="${base}pages/sanierungsfahrplan.html">Sanierungsfahrplan (iSFP)</a></li>
-          <li><a href="${base}pages/energieausweis.html">Energieausweis</a></li>
           <li><a href="${base}pages/foerdermittelberatung.html">Fördermittelberatung</a></li>
+          <li><a href="${base}pages/baubegleitung.html">Energetische Baubegleitung</a></li>
           <li><a href="${base}pages/energetische-sanierung.html">Energetische Sanierung</a></li>
           <li><a href="${base}pages/ueber-mich.html">Über mich</a></li>
+          <li><a href="${base}pages/energieausweis.html">Energieausweis</a></li>
         </ul>
       </div>
       <div>
@@ -56,7 +58,7 @@ function injectComponents() {
         <div class="footer__contact">
           <a href="tel:+4915561722088">0155 6172 2088</a>
           <a href="mailto:info@energieberatung-bock.de">info@energieberatung-bock.de</a>
-          <span style="font-size:0.82rem;margin-top:0.25rem;">Neuhausen &amp; Enzkreis</span>
+          <span style="font-size:0.82rem;margin-top:0.25rem;">Südlicher Enzkreis &amp; Umgebung</span>
         </div>
         <div style="margin-top:1.25rem;">
           <h4>Zertifizierungen</h4>

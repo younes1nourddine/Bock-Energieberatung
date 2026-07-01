@@ -5,6 +5,7 @@
     { "source": "/foerdermittelberatung", "destination": "/pages/foerdermittelberatung.html" },
     { "source": "/energetische-sanierung", "destination": "/pages/energetische-sanierung.html" },
     { "source": "/ueber-mich", "destination": "/pages/ueber-mich.html" },
+    { "source": "/baubegleitung", "destination": "/pages/baubegleitung.html" },
     { "source": "/impressum", "destination": "/pages/impressum.html" },
     { "source": "/datenschutz", "destination": "/pages/datenschutz.html" }
   ]
