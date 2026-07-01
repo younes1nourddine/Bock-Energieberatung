@@ -189,57 +189,14 @@ p  { color: var(--slate); line-height: 1.75; }
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: center;
-  gap: 3rem;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 760px;
 }
 .hero__content {
-  flex: 1 1 480px;
-  max-width: 620px;
-}
-.hero__image {
-  flex: 0 0 340px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero__creds {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   width: 100%;
 }
-.hero__cred-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.13);
-  border-radius: 14px;
-  padding: 1.25rem 1.5rem;
-}
-.hero__cred-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: rgba(110,231,192,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: #6EE7C0;
-}
-.hero__cred-label {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.2rem;
-}
-.hero__cred-sub {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.62);
-  line-height: 1.4;
-}
-.hero__image img {
+.hero__image {
   display: none;
 }
 .hero__tag {
