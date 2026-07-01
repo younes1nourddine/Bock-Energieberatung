@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fördermittelberatung BAFA &amp; KfW | Energieberatung Bock | Neuhausen / Enzkreis</title>
-  <meta name="description" content="Fördermittelberatung für energetische Sanierung: BAFA, KfW und Landesförderung in Baden-Württemberg. Energieberater Andreas Bock berät in Neuhausen und im Enzkreis.">
+  <title>Klimaschutz durch Sanierung, staatlich gefördert | Energieberatung Bock</title>
+  <meta name="description" content="Energetische Sanierung ist aktiver Klimaschutz. Und der Staat fördert ihn: BAFA, KfW und Landesförderung bis zu 70.000 Euro. Andreas Bock begleitet Sie, von der Beratung bis zum Antrag.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://energieberatung-bock.de/foerdermittelberatung">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,30 +14,264 @@
   <link rel="shortcut icon" href="../favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
   <link rel="apple-touch-icon" href="../favicon.png">
+  <style>
+    .klima-intro {
+      background: linear-gradient(135deg, #0B2545 0%, #0E5C45 100%);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      margin-bottom: 3.5rem;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .klima-intro h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2rem); }
+    .klima-intro p  { color: rgba(255,255,255,0.85); }
+    .klima-intro__stat {
+      text-align: center;
+      background: rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.25rem;
+    }
+    .klima-intro__stat-number {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #6EE7C0;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .klima-intro__stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.4;
+    }
+    .klima-intro__stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .warum-block {
+      background: var(--mist);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .warum-block h2 { margin-bottom: 1rem; }
+    .warum-block p  { margin-bottom: 1rem; }
+    .warum-block p:last-child { margin-bottom: 0; }
+
+    .foerder-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .foerder-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      background: var(--chalk);
+      display: flex;
+      flex-direction: column;
+    }
+    .foerder-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--forest), var(--moss));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      flex-shrink: 0;
+    }
+    .foerder-card__icon svg { color: #fff; }
+    .foerder-card h3 { color: var(--ink); margin-bottom: 0.6rem; font-size: 1.05rem; }
+    .foerder-card p  { font-size: 0.9rem; flex: 1; }
+    .foerder-card__tag {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--forest);
+      background: rgba(14,92,69,0.08);
+      border-radius: 20px;
+      padding: 0.3rem 0.85rem;
+    }
+
+    .prozess-timeline {
+      margin-bottom: 3.5rem;
+    }
+    .prozess-timeline h2 { margin-bottom: 2rem; }
+    .prozess-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .prozess-step {
+      background: var(--chalk);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.5rem;
+      position: relative;
+    }
+    .prozess-step__num {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--moss);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .prozess-step h4 { color: var(--ink); font-size: 0.95rem; margin-bottom: 0.4rem; }
+    .prozess-step p  { font-size: 0.85rem; }
+
+    .cta-band {
+      background: linear-gradient(135deg, var(--forest) 0%, var(--moss) 100%);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      text-align: center;
+    }
+    .cta-band h2 { color: #fff; margin-bottom: 0.75rem; }
+    .cta-band p  { color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 2rem; }
+    .cta-band .btn--primary {
+      background: #fff;
+      color: var(--forest);
+      border-color: #fff;
+    }
+    .cta-band .btn--primary:hover {
+      background: rgba(255,255,255,0.9);
+    }
+
+    @media (max-width: 768px) {
+      .klima-intro { grid-template-columns: 1fr; }
+      .foerder-cards { grid-template-columns: 1fr; }
+      .prozess-steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 500px) {
+      .prozess-steps { grid-template-columns: 1fr; }
+      .klima-intro__stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
   <div id="nav-mount"></div>
+
   <section class="page-hero">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Startseite</a><span> / </span><span aria-current="page">Fördermittelberatung</span></nav>
-      <h1>Fördermittelberatung</h1>
-      <p>Bei BAFA, KfW und Landesförderung finde ich das optimale Förderprogramm und stelle alle Anträge für Sie.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Startseite</a><span> / </span><span aria-current="page">Klimaschutz und Förderung</span></nav>
+      <h1>Klimaschutz, den der Staat fördert</h1>
+      <p>Energetisch sanieren ist das Wirksamste, was Hausbesitzer für das Klima tun können. Und der Bund, die KfW und das BAFA machen es finanziell attraktiver als je zuvor.</p>
     </div>
   </section>
+
   <div class="prose-section">
-    <h2>Warum Fördermittel so wichtig sind</h2>
-    <p>Energetische Sanierungen sind eine Investition in die Zukunft, und der Staat unterstützt Sie dabei erheblich. Wer die richtigen Programme kennt und Anträge korrekt stellt, kann bis zu 70.000 Euro und mehr an Zuschüssen und zinsgünstigen Darlehen erhalten. Das Problem: Die Förderlandschaft ist komplex, ändert sich regelmäßig, und ein falsch gestellter Antrag oder eine verpasste Frist kann mehrere tausend Euro Förderung kosten. Genau dafür bin ich da.</p>
-    <h2>Die wichtigsten Förderprogramme im Überblick</h2>
-    <h3>BAFA, Bundesamt für Wirtschaft und Ausfuhrkontrolle</h3>
-    <p>Die BAFA fördert die Erstellung von Sanierungsfahrplänen (iSFP) mit bis zu 80 % sowie Einzelmaßnahmen der Bundesförderung für effiziente Gebäude (BEG EM), zum Beispiel den Einbau von Wärmepumpen, Solarthermie, Dämmmaßnahmen oder effizienten Fenstern.</p>
-    <h3>KfW, Kreditanstalt für Wiederaufbau</h3>
-    <p>Die KfW bietet zinsgünstige Kredite und direkte Tilgungszuschüsse für energieeffiziente Sanierungen an. Besonders attraktiv ist das KfW-Programm 261 (Bundesförderung für effiziente Gebäude, Wohngebäude), das Komplettsanierungen zum Effizienzhaus fördert.</p>
-    <h3>Landesförderung Baden-Württemberg</h3>
-    <p>Das Land Baden-Württemberg ergänzt Bundesförderungen durch eigene Programme. Über die L-Bank und regionale Förderinstitutionen stehen je nach Maßnahme und Einkommenssituation zusätzliche Mittel bereit, die sich häufig mit BAFA- und KfW-Förderung kombinieren lassen.</p>
-    <h2>Wie ich Sie unterstütze</h2>
-    <p>Ich analysiere Ihre Ausgangssituation, identifiziere alle für Sie relevanten Förderprogramme und begleite Sie vollständig durch den Antragsprozess, von der Antragstellung über die Verwendungsnachweise bis zur Auszahlung. So stellen wir gemeinsam sicher, dass Ihnen keine Fördersumme entgeht, auf die Sie eigentlich Anspruch hätten.</p>
-    <div style="margin-top:2rem;"><a href="../index.html#kontakt" class="btn btn--primary">Kostenlose Förderanalyse anfragen</a></div>
+
+    <div class="klima-intro">
+      <div>
+        <span class="eyebrow" style="color:#6EE7C0;">Warum Andreas Bock Energieberater wurde</span>
+        <h2>Ein Beruf aus Überzeugung, nicht aus Kalkül</h2>
+        <p>Als Ingenieur in der Baubranche hat Andreas Bock über Jahre erlebt, wie viel Energie in Bestandsgebäuden schlicht verloren geht. Ungedämmte Fassaden, veraltete Heizsysteme, Fenster ohne Wärmeschutz: Jedes dieser Gebäude emittiert Jahr für Jahr unnötig CO₂, das wir uns als Gesellschaft schlicht nicht mehr leisten können.</p>
+        <p style="margin-top:1rem;">Daraus wurde eine Entscheidung: Vollständige Fokussierung auf die Energieberatung, nicht weil es das profitabelste Feld ist, sondern weil Gebäude für rund 35 Prozent des deutschen Energieverbrauchs verantwortlich sind und jede Sanierung einen konkreten, messbaren Beitrag zum Klimaschutz leistet.</p>
+      </div>
+      <div class="klima-intro__stats-grid">
+        <div class="klima-intro__stat">
+          <div class="klima-intro__stat-number">35%</div>
+          <div class="klima-intro__stat-label">des deutschen Endenergieverbrauchs entfallen auf Gebäude</div>
+        </div>
+        <div class="klima-intro__stat">
+          <div class="klima-intro__stat-number">65%</div>
+          <div class="klima-intro__stat-label">der Wohngebäude in Deutschland gelten als sanierungsbedürftig</div>
+        </div>
+        <div class="klima-intro__stat">
+          <div class="klima-intro__stat-number">70%</div>
+          <div class="klima-intro__stat-label">CO₂-Reduktion sind durch konsequente Gebäudesanierung möglich</div>
+        </div>
+        <div class="klima-intro__stat">
+          <div class="klima-intro__stat-number">2045</div>
+          <div class="klima-intro__stat-label">Zieldatum: Klimaneutralität des deutschen Gebäudebestands</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warum-block">
+      <span class="eyebrow">Warum das Thema dringlicher wird</span>
+      <h2>Gebäude und Klima: Ein Problem, das jeder angehen kann</h2>
+      <p>Klimaschutz fühlt sich oft abstrakt an. Windparks, internationale Abkommen, Industriepolitik. Dabei ist die eigene Immobilie einer der direktesten Hebel, den Privatpersonen in der Hand halten. Ein schlecht gedämmtes Einfamilienhaus kann 20 bis 30 Tonnen CO₂ pro Jahr emittieren. Eine vollständig sanierte Immobilie, mit zeitgemäßer Dämmung, effizienter Wärmepumpe und Solarthermie, kommt auf einen Bruchteil davon.</p>
+      <p>Der entscheidende Punkt: Das ist keine Frage des persönlichen Opfers. Wer saniert, heizt günstiger, wohnt komfortabler, erhöht den Wert seiner Immobilie und schützt gleichzeitig das Klima. Diese vier Ziele lassen sich verbinden, wenn man es richtig angeht. Genau das ist die Aufgabe von Andreas Bock.</p>
+      <p>Und weil die Politik versteht, dass der Gebäudesektor ein Schlüssel zur Klimawende ist, fördert der Staat energetische Sanierungen so großzügig wie kaum etwas sonst.</p>
+    </div>
+
+    <span class="eyebrow">Staatliche Förderung</span>
+    <h2 style="margin-bottom:1.75rem;">Der Staat honoriert das, was dem Klima nützt</h2>
+
+    <div class="foerder-cards">
+      <div class="foerder-card">
+        <div class="foerder-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3>BAFA, Bundesförderung Einzelmaßnahmen</h3>
+        <p>Das Bundesamt für Wirtschaft und Ausfuhrkontrolle fördert einzelne Klimaschutzmaßnahmen direkt: Wärmepumpen, Dämmung, neue Fenster und Solarthermie werden mit bis zu 70 Prozent der Investitionskosten bezuschusst. Hinzu kommt die Förderung des individuellen Sanierungsfahrplans (iSFP) mit bis zu 80 Prozent.</p>
+        <span class="foerder-card__tag">Bis zu 70% Zuschuss</span>
+      </div>
+      <div class="foerder-card">
+        <div class="foerder-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+        </div>
+        <h3>KfW, Effizienzhausförderung und Kredit</h3>
+        <p>Die Kreditanstalt für Wiederaufbau belohnt besonders ambitionierte Sanierungen: Wer sein Gebäude zum Effizienzhaus 55 oder 40 entwickelt, erhält über das Programm 261 zinsgünstige Kredite mit direkten Tilgungszuschüssen. Je klimafreundlicher das Ergebnis, desto höher die staatliche Beteiligung.</p>
+        <span class="foerder-card__tag">Zinsvorteil plus Tilgungszuschuss</span>
+      </div>
+      <div class="foerder-card">
+        <div class="foerder-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3>L-Bank Baden-Württemberg</h3>
+        <p>Das Land Baden-Württemberg ergänzt die Bundesförderung mit eigenen Programmen über die L-Bank. Diese Mittel lassen sich in vielen Fällen mit BAFA und KfW kombinieren, was die tatsächliche Eigenleistung weiter reduziert. Besonders relevant für einkommensschwächere Haushalte und historische Gebäude.</p>
+        <span class="foerder-card__tag">Kombinierbar mit Bundesförderung</span>
+      </div>
+    </div>
+
+    <div class="prozess-timeline">
+      <span class="eyebrow">So funktioniert die Zusammenarbeit</span>
+      <h2>Von der ersten Frage bis zur Förderzahlung</h2>
+      <div class="prozess-steps">
+        <div class="prozess-step">
+          <div class="prozess-step__num">01</div>
+          <h4>Kostenlose Erstberatung</h4>
+          <p>Gemeinsam klären wir, welche Maßnahmen an Ihrer Immobilie sinnvoll sind und welche Förderprogramme dafür infrage kommen.</p>
+        </div>
+        <div class="prozess-step">
+          <div class="prozess-step__num">02</div>
+          <h4>Förderanalyse und Planung</h4>
+          <p>Andreas Bock erstellt eine vollständige Förderübersicht, berechnet die realistische Eigenleistung und empfiehlt eine sinnvolle Reihenfolge der Maßnahmen.</p>
+        </div>
+        <div class="prozess-step">
+          <div class="prozess-step__num">03</div>
+          <h4>Antragstellung</h4>
+          <p>Als DENA-gelisteter Energieeffizienz-Experte stellt Andreas Bock alle notwendigen Anträge bei BAFA und KfW. Ohne diesen Nachweis sind viele Förderprogramme gar nicht beantragbar.</p>
+        </div>
+        <div class="prozess-step">
+          <div class="prozess-step__num">04</div>
+          <h4>Begleitung bis zur Auszahlung</h4>
+          <p>Nach Abschluss der Maßnahmen übernimmt Andreas Bock die Verwendungsnachweise, damit keine Förderung an Formalitäten scheitert.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <span class="eyebrow" style="color:#6EE7C0;">Jetzt starten</span>
+      <h2>Ihr Beitrag zum Klimaschutz, mit staatlicher Unterstützung</h2>
+      <p>Finden Sie heraus, welche Fördermittel Ihnen zustehen und wie viel Ihre Sanierung Sie nach Abzug der Zuschüsse wirklich kostet.</p>
+      <a href="../index.html#kontakt" class="btn btn--primary">Kostenlose Förderanalyse anfragen</a>
+    </div>
+
   </div>
+
   <div id="footer-mount"></div>
   <script src="../js/components.js"></script>
   <script src="../js/main.js"></script>
