@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "title": "Im Sommer kühl, im Winter warm:",
+    "title_em": "und klimafreundlich.",
+    "text": "Als zertifizierter Energieberater begleite ich Sie Schritt für Schritt zu einem Zuhause, das weniger verbraucht, mehr Komfort bietet und die Umwelt schont.",
+    "btn_primary": "Kostenloses Erstgespräch",
+    "btn_ghost": "Meine Leistungen",
+    "banner": "Förderanträge bei BAFA und KfW stelle ich vollständig für Sie. Keine Formulare, kein Fristenstress."
+  },
+  "ueber": {
+    "title": "Andreas Bock, Ihr Energieberater vor Ort",
+    "text1": "Ich bin staatlich anerkannter Energieberater und Ingenieur. Seit Jahren berate ich Hausbesitzer im Enzkreis dabei, wie sie ihren Energieverbrauch senken, staatliche Förderung optimal nutzen und gleichzeitig etwas fürs Klima tun können.",
+    "text2": "Was mich antreibt: Ich glaube, dass jedes Haus sein Potenzial kennen sollte. Meine Arbeit ist persönlich, unabhängig und immer auf Ihre konkrete Situation zugeschnitten."
+  },
+  "kontakt": {
+    "title": "Kostenloses Erstgespräch vereinbaren",
+    "text": "Ich melde mich innerhalb von 24 Stunden bei Ihnen."
+  }
+}
