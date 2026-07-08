@@ -1,0 +1,75 @@
+content:
+  - name: global
+    label: Kontakt & Firma
+    path: content/global.json
+    type: file
+    fields:
+      - { name: phone, label: Telefon, type: string }
+      - { name: email, label: E-Mail, type: string }
+      - { name: address, label: Adresse, type: string }
+      - { name: region, label: Region (Footer-Text), type: string }
+
+  - name: homepage
+    label: Startseite
+    path: content/homepage.json
+    type: file
+    fields:
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - { name: title, label: "Überschrift (weiß)", type: string }
+          - { name: title_em, label: "Überschrift Akzent (grün)", type: string }
+          - { name: text, label: Text, type: string }
+          - { name: btn_primary, label: Button 1, type: string }
+          - { name: btn_ghost, label: Button 2, type: string }
+          - { name: banner, label: Hinweistext, type: string }
+      - name: ueber
+        label: Über mich
+        type: object
+        fields:
+          - { name: title, label: Überschrift, type: string }
+          - { name: text1, label: Absatz 1, type: rich-text }
+          - { name: text2, label: Absatz 2, type: rich-text }
+      - name: kontakt
+        label: Kontaktbereich
+        type: object
+        fields:
+          - { name: title, label: Überschrift, type: string }
+          - { name: text, label: Untertext, type: string }
+
+  - name: sanierungsfahrplan
+    label: Seite Sanierungsfahrplan
+    path: content/sanierungsfahrplan.json
+    type: file
+    fields:
+      - { name: h1, label: Seitentitel (H1), type: string }
+      - { name: subtitle, label: Untertitel, type: string }
+      - { name: intro, label: Einleitung, type: rich-text }
+      - { name: foerder_text, label: Fördertext, type: string }
+
+  - name: baubegleitung
+    label: Seite Baubegleitung
+    path: content/baubegleitung.json
+    type: file
+    fields:
+      - { name: h1, label: Seitentitel (H1), type: string }
+      - { name: subtitle, label: Untertitel, type: string }
+      - { name: intro1, label: Absatz 1, type: rich-text }
+      - { name: intro2, label: Absatz 2, type: rich-text }
+
+  - name: energieausweis
+    label: Seite Energieausweis
+    path: content/energieausweis.json
+    type: file
+    fields:
+      - { name: h1, label: Seitentitel (H1), type: string }
+      - { name: subtitle, label: Untertitel, type: string }
+      - { name: pflicht_text, label: Pflichthinweis, type: string }
+
+  - name: ueber_mich
+    label: Seite Über mich
+    path: content/ueber-mich.json
+    type: file
+    fields:
+      - { name: motivation, label: Motivationstext, type: rich-text }
