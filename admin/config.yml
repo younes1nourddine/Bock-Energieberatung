@@ -3,7 +3,7 @@ backend:
   repo: younes1nourddine/Bock-Energieberatung
   branch: main
   auth_type: pkce
-  app_id: GITHUB_CLIENT_ID_HIER_EINTRAGEN
+  app_id: Ov23liAZEd9zrOCU8TKX
 
 media_folder: images
 public_folder: /images
