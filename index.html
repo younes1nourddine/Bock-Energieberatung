@@ -13,9 +13,6 @@
   <meta property="og:url" content="https://energieberatung-bock.de/">
   <meta property="og:title" content="Energieberatung Bock | Sanierungsfahrplan &amp; Förderberatung | Neuhausen / Enzkreis">
   <meta property="og:description" content="Zertifizierter Energieberater in Neuhausen und dem Enzkreis. BAFA-Förderung bis 80 %. Persönlich, regional, klimabewusst.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico">
   <style>
@@ -251,31 +248,6 @@
     </div>
   </div>
 
-  <section class="section section--mist" aria-label="Bildergalerie: Energetische Sanierung und Klimaschutz" style="padding-top:3rem; padding-bottom:3rem;">
-    <div class="container">
-      <div class="grid-3">
-        <div>
-          <div class="illu-box illu-box--wide">
-            <img src="https://images.unsplash.com/photo-1776860155275-eee24bfb1dee?fm=jpg&amp;q=80&amp;w=1200&amp;fit=crop" alt="Modernes Haus mit effizienter Wärmepumpe" loading="lazy">
-          </div>
-          <p class="illu-caption">Effiziente Wärmepumpe statt fossiler Heizung</p>
-        </div>
-        <div>
-          <div class="illu-box illu-box--wide">
-            <img src="https://images.unsplash.com/photo-1482731215275-a1f151646268?fm=jpg&amp;q=80&amp;w=1200&amp;fit=crop" alt="Handwerker bei der energetischen Sanierung eines Hauses" loading="lazy">
-          </div>
-          <p class="illu-caption">Fachgerechte Dämmung und Sanierung</p>
-        </div>
-        <div>
-          <div class="illu-box illu-box--wide">
-            <img src="https://images.unsplash.com/photo-1444419988131-046ed4e5ffd6?fm=jpg&amp;q=80&amp;w=1200&amp;fit=crop" alt="Wald im Enzkreis als Sinnbild für Klimaschutz" loading="lazy">
-          </div>
-          <p class="illu-caption">Klimaschutz vor der eigenen Haustür</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section" id="leistungen" aria-labelledby="leistungen-heading">
     <div class="container">
       <span class="eyebrow">Leistungen</span>
@@ -355,7 +327,7 @@
             <p class="sc-question">Wann wurde Ihr Gebäude gebaut?</p>
             <div class="sc-options" role="group" aria-label="Baujahr auswählen">
               <button class="sc-option" data-step="1" data-value="vor1980">Vor 1980</button>
-              <button class="sc-option" data-step="1" data-value="1980-2000">1980 – 2000</button>
+              <button class="sc-option" data-step="1" data-value="1980-2000">1980 bis 2000</button>
               <button class="sc-option" data-step="1" data-value="nach2000">Nach 2000</button>
             </div>
           </div>
@@ -566,19 +538,19 @@
         if (score >= 7) {
           badge   = 'Hohes Einsparpotenzial erkannt';
           title   = 'Ihr Gebäude hat erheblichen Sanierungsbedarf';
-          text    = 'Aufgrund des Baujahrs, der Heizungsanlage und des Sanierungsstands ist das Energieeinsparpotenzial Ihres Gebäudes besonders hoch. Mit einem individuellen Sanierungsfahrplan legen Sie die Grundlage für eine schrittweise, förderfähige Modernisierung, die Heizkosten dauerhaft senkt und den Wohnkomfort deutlich verbessert.';
+          text    = 'Baujahr, Heizung und Sanierungsstand zusammen ergeben ein hohes Einsparpotenzial. Ein individueller Sanierungsfahrplan zeigt Ihnen die sinnvolle Reihenfolge und sichert die passende Förderung.';
           saving  = 'bis zu 50 % Heizkosten';
           measure = 'Sanierungsfahrplan (iSFP)';
         } else if (score >= 4) {
           badge   = 'Merkliches Einsparpotenzial vorhanden';
           title   = 'Gezielte Maßnahmen können viel bewirken';
-          text    = 'Ihr Gebäude bietet noch spürbares Potenzial für Energieeinsparungen. Je nach Zustand von Dämmung, Fenstern und Heizungsanlage lassen sich mit gezielten Einzelmaßnahmen oder einem abgestimmten Sanierungspaket deutliche Einsparungen erzielen, bei attraktiver BAFA- oder KfW-Förderung.';
+          text    = 'Ihr Gebäude hat noch spürbares Potenzial. Je nach Zustand von Dämmung, Fenstern und Heizung bringen gezielte Einzelmaßnahmen oft schon deutliche Einsparungen, mit BAFA- oder KfW-Förderung.';
           saving  = 'bis zu 30 % Heizkosten';
           measure = 'Heizungscheck & Beratung';
         } else {
           badge   = 'Optimierungspotenzial vorhanden';
           title   = 'Ihr Gebäude ist gut aufgestellt';
-          text    = 'Ihr Gebäude befindet sich bereits in einem vergleichsweise guten energetischen Zustand. Dennoch lohnt sich ein professioneller Blick: Oft verbergen sich in Detailbereichen wie Lüftung, Warmwasser oder Regelungstechnik noch Einsparmöglichkeiten, die sich schnell amortisieren.';
+          text    = 'Ihr Gebäude steht energetisch schon gut da. Ein fachlicher Blick lohnt sich trotzdem: In Lüftung, Warmwasser oder Regelungstechnik stecken oft kleine Einsparungen, die sich schnell rechnen.';
           saving  = 'bis zu 15 % Energiekosten';
           measure = 'Energieberatung vor Ort';
         }

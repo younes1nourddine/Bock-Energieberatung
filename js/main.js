@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.nav__links a').forEach(link => {
     const href = link.getAttribute('href').replace(/\/$/, '');
     if (currentPath.endsWith(href) || (href === 'index.html' && (currentPath === '' || currentPath.endsWith('/')))) {
-      link.style.color = '#fff';
+      link.style.color = 'var(--forest)';
       link.style.fontWeight = '600';
     }
   });
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (nav) {
     window.addEventListener('scroll', () => {
       nav.style.boxShadow = window.scrollY > 10
-        ? '0 2px 20px rgba(11,37,69,0.3)'
+        ? '0 6px 24px -14px rgba(20,40,25,0.35)'
         : 'none';
     }, { passive: true });
   }
